@@ -1,3 +1,4 @@
+module.exports.name = "Alice";
 const currentDate = new Date();
 module.exports.date = currentDate;
  
