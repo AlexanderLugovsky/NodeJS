@@ -1,10 +1,12 @@
-let nodePath = process.argv[0];
-let appPath = process.argv[1];
-let name = process.argv[2];
-let age = process.argv[3];
+// получаем модуль Express
+const express = require("express");
+// создаем приложение
+const app = express();
  
-console.log("nodePath: " + nodePath);
-console.log("appPath: " + appPath);
-console.log();
-console.log("name: " + name);
-console.log("age: " + age);
+// устанавливаем обработчик для маршрута "/"
+app.get("/", function(request, response){
+ 
+    response.end("Hello from Express!");
+});
+// начинаем прослушивание подключений на 3000 порту
+app.listen(3000);
