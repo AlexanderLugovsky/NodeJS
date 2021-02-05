@@ -1,7 +1,12 @@
-const fs = require("fs");
+var http = require("http");
  
-let readableStream = fs.createReadStream("hello.txt", "utf8");
- 
-let writeableStream = fs.createWriteStream("some2.txt");
- 
-readableStream.pipe(writeableStream);
+http.createServer(function(request, response){
+     
+    console.log("Url: " + request.url);
+    console.log("Тип запроса: " + request.method);
+    console.log("User-Agent: " + request.headers["user-agent"]);
+    console.log("Все заголовки");
+    console.log(request.headers);
+     
+    response.end();
+}).listen(3000);
